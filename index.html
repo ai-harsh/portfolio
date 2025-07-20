@@ -36,10 +36,15 @@
                     <a href="#contact" class="nav-link">Contact</a>
                 </li>
             </ul>
-            <div class="nav-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            <div class="nav-controls">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </button>
+                <div class="nav-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </div>
         </div>
     </nav>
@@ -70,7 +75,7 @@
                     <a href="https://twitter.com/ai-harsh" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-twitter"></i>
                     </a>
-                    <a href="mailto:harshdc17@gmaik.com">
+                    <a href="mailto:harshdc17@gmail.com">
                         <i class="fas fa-envelope"></i>
                     </a>
                 </div>
@@ -103,15 +108,15 @@
                     </p>
                     <div class="stats">
                         <div class="stat-item">
-                            <h3>10+</h3>
+                            <h3>15+</h3>
                             <p>Projects Completed</p>
                         </div>
                         <div class="stat-item">
-                            <h3>1+</h3>
+                            <h3>3+</h3>
                             <p>Years Experience</p>
                         </div>
                         <div class="stat-item">
-                            <h3>90%</h3>
+                            <h3>98%</h3>
                             <p>Client Satisfaction</p>
                         </div>
                     </div>
@@ -184,8 +189,18 @@
     <section id="projects" class="projects">
         <div class="container">
             <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
+            
+            <!-- Project Filters -->
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="web">Web Development</button>
+                <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
+                <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+                <button class="filter-btn" data-filter="api">API Development</button>
+            </div>
+            
+            <div class="projects-grid" id="projects-grid">
+                <div class="project-card" data-category="mobile fullstack">
                     <div class="project-image">
                         <img src="image1.png" alt="E-Commerce App">
                         <div class="project-overlay">
@@ -205,7 +220,7 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card" data-category="web fullstack">
                     <div class="project-image">
                         <img src="image.png" alt="Task Manager">
                         <div class="project-overlay">
@@ -225,7 +240,7 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card" data-category="web">
                     <div class="project-image">
                         <img src="portfolio.jpg" alt="Portfolio Website">
                         <div class="project-overlay">
@@ -245,7 +260,7 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card" data-category="mobile api">
                     <div class="project-image">
                         <img src="image3.png" alt="Weather App">
                         <div class="project-overlay">
@@ -261,6 +276,87 @@
                             <span>Android Studio</span>
                             <span>REST API</span>
                             <span>Firebase</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional template projects for 15+ portfolio -->
+                <div class="project-card" data-category="web fullstack">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x250/667eea/ffffff?text=Social+Media+App" alt="Social Media Platform">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Social Media Platform</h3>
+                        <p>Full-featured social media application with real-time messaging, post sharing, friend system, and advanced privacy controls.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>Socket.io</span>
+                            <span>MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="web api">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x250/764ba2/ffffff?text=Learning+Platform" alt="Online Learning Platform">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Online Learning Platform</h3>
+                        <p>Comprehensive e-learning platform with video streaming, quiz system, progress tracking, and certificate generation.</p>
+                        <div class="project-tech">
+                            <span>Django</span>
+                            <span>Python</span>
+                            <span>PostgreSQL</span>
+                            <span>Redis</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="mobile fullstack">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x250/06b6d4/ffffff?text=Fitness+Tracker" alt="Fitness Tracking App">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Fitness Tracking App</h3>
+                        <p>Mobile fitness application with workout planning, progress tracking, social features, and integration with wearable devices.</p>
+                        <div class="project-tech">
+                            <span>Flutter</span>
+                            <span>Dart</span>
+                            <span>Firebase</span>
+                            <span>Health APIs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="web api">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x250/10b981/ffffff?text=Analytics+Dashboard" alt="Analytics Dashboard">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Business Analytics Dashboard</h3>
+                        <p>Real-time analytics dashboard with data visualization, reporting tools, and automated insights for business intelligence.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>D3.js</span>
+                            <span>Python</span>
+                            <span>FastAPI</span>
                         </div>
                     </div>
                 </div>
@@ -338,7 +434,7 @@
                         <a href="https://twitter.com/ai-harsh" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="mailto:harshdc17@gmai.com">
+                        <a href="mailto:harshdc17@gmail.com">
                             <i class="fas fa-envelope"></i>
                         </a>
                     </div>
